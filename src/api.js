@@ -15,3 +15,5 @@ export const getReviews = () => {
       return data.reviews;
     });
 };
+
+// I would suggest converting this to an axios instance with axios.create, since the baseURL is always going to be the same here, you can sometimes make mistakes if you are copy pasting it each time. This ensures that mistakes are less likely

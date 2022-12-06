@@ -6,14 +6,18 @@ import "../App.css";
 
 function Contents() {
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getReviews().then((reviews) => {
       setReviews(reviews);
+      setLoading(false);
     });
   }, []);
 
-  return (
+  return loading ? (
+    <p>...page is loading</p>
+  ) : (
     <div>
       <NavBar />
       <Reviews />
