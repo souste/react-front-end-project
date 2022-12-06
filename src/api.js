@@ -16,4 +16,13 @@ export const getReviews = () => {
     });
 };
 
+export const getReviewById = (review_id) => {
+  return axios
+    .get(`https://plum-yak-toga.cyclic.app/api/reviews/${review_id}`)
+    .then(({ data }) => {
+      console.log(data.review);
+      return data.review;
+    });
+};
+
 // I would suggest converting this to an axios instance with axios.create, since the baseURL is always going to be the same here, you can sometimes make mistakes if you are copy pasting it each time. This ensures that mistakes are less likely
