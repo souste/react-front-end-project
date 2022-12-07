@@ -20,8 +20,15 @@ export const getReviewById = (review_id) => {
   return axios
     .get(`https://plum-yak-toga.cyclic.app/api/reviews/${review_id}`)
     .then(({ data }) => {
-      console.log(data.review);
       return data.review;
+    });
+};
+
+export const getCommentByReviewId = (review_id) => {
+  return axios
+    .get(`https://plum-yak-toga.cyclic.app/api/reviews/${review_id}/comments`)
+    .then(({ data }) => {
+      return data.comments;
     });
 };
 
