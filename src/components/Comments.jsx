@@ -8,17 +8,22 @@ function Comments() {
   const { review_id } = useParams();
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    getCommentByReviewId(review_id).then((comments) => {
-      setComments(comments);
-      setLoading(false);
-    });
+    getCommentByReviewId(review_id)
+      .then((comments) => {
+        setComments(comments);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(true);
+      });
   }, [review_id]);
 
-  return loading ? (
-    <p>...page is loading</p>
-  ) : (
+  if (error) return <p>No comments found</p>;
+  if (loading) return <p>...page is loading</p>;
+  return (
     <ul className="commentBox">
       {comments.map((comment) => {
         return (
