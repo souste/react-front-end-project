@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCommentByReviewId } from "../api";
 import "../App.css";
+import AddComment from "./AddComment";
 
 function Comments() {
   const { review_id } = useParams();
@@ -24,12 +25,14 @@ function Comments() {
   if (error) return <p>No comments found</p>;
   if (loading) return <p>...page is loading</p>;
   return (
-    <ul className="commentBox">
+    <ul className="commentsBox">
+      <h3>Comments:</h3>
+      <AddComment setComments={setComments} review_id={review_id} />
       {comments.map((comment) => {
         return (
           <div>
             <ul>
-              <li>
+              <li className="indCommentBox">
                 <p>Comment: {comment.body}</p>
                 <p>by Author {comment.author}</p>
                 <p>Votes: {comment.votes}</p>

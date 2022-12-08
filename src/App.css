@@ -1,3 +1,5 @@
+/* General */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,20 +16,10 @@
   border-style: solid;
   min-height: 100vh;
 }
-.header {
-  grid-area: header;
-  border-color: blue;
-}
 
-/* why won't header work? */
-
-nav {
-  background-color: aliceblue;
-  padding: 16px 32px;
-}
-
-nav a {
-  margin-right: 16px;
+ul {
+  list-style-type: none;
+  padding-top: 30px;
 }
 
 img {
@@ -41,7 +33,99 @@ img {
   box-shadow: 0px 3px 4px lightgray;
 }
 
+h1 {
+  width: 100%;
+  color: #d9230e;
+  font-weight: 200;
+  margin: 20px 0px;
+}
+
+h2 {
+  width: 100%;
+  color: blue;
+  font-weight: 200;
+  margin: 20px 0px;
+}
+
+h3 {
+  width: 100%;
+  color: green;
+  font-weight: 200;
+  margin: 20px 0px;
+}
+
+p {
+  margin: 20px 20px;
+  font-weight: 300;
+}
+
+/* navBar Component */
+
+.navBar {
+  background-color: aliceblue;
+  padding: 16px 32px;
+  border: 5px solid green;
+}
+
+nav a {
+  margin-right: 16px;
+}
+
+/* Reviews Component */
+
 .reviewBox {
+  padding: 10px;
+  /* margin: 10px; */
+  column-rule-width: 1px;
+  column-width: 100px;
+  columns: 300px 3;
+  border: 5px solid black;
+}
+
+.smallReviewBox {
+  border: 5px solid red;
+  background-color: lightgray;
   padding: 10px;
   margin: 10px;
 }
+
+/* Button Component */
+
+.button {
+  padding: 5px 10px;
+  border: rgb(132, 132, 132) solid 1px;
+  margin: 0 5px;
+  background-color: #d1a6a2;
+
+  /* SingleReview Component */
+}
+
+.singleReviewBox {
+  border: 5px solid rgb(177, 100, 100);
+}
+
+/* Comment Component */
+
+.commentsBox {
+  border: 5px solid black;
+}
+
+.indCommentBox {
+  border: 5px solid blue;
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+  background: lightgray;
+}
+
+/* @media only screen and (min-width: 600px) {
+  .reviewBox {
+    grid-template-columns: 25% 75%;
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+      "header header"
+      "nav content";
+  } */
+/* } */
+
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss3_column-count */

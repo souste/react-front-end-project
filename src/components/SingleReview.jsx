@@ -21,19 +21,19 @@ function SingleReview() {
     <p>...page is loading</p>
   ) : (
     <div>
-      <ul>
-        <li>
-          <h3>{singleReview.title}</h3>
+      <ul className="singleReviewBox">
+        <li className="singleReviewInfoBox">
+          <h2>Game: {singleReview.title}</h2>
           <p>Category: {singleReview.category}</p>
           <img src={singleReview.review_img_url} alt={singleReview.title} />
-          <p>Description:</p>
+          <h3>Description:</h3>
           <p>{singleReview.review_body}</p>
           <p>Owner: {singleReview.owner}</p>
           <p>Designer: {singleReview.designer}</p>
           <p>Created At: {singleReview.created_at}</p>
           <p>Votes: {singleReview.votes}</p>
         </li>
-        <h3>Comments</h3>
+
         <Comments />
       </ul>
     </div>

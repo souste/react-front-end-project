@@ -2,6 +2,7 @@ import { getCategories } from "../api";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 function NavBar() {
   const [categories, setCategories] = useState([]);
@@ -13,7 +14,7 @@ function NavBar() {
   }, []);
 
   return (
-    <nav>
+    <nav className="navBar">
       <ul>
         {categories.map((category) => {
           return <Link>{category.slug}</Link>;
