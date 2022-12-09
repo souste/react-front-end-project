@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getReviewById } from "../api";
 import Comments from "./Comments";
 import "../App.css";
+import Button2 from "./Button2";
 
 function SingleReview() {
   const { review_id } = useParams();
@@ -21,9 +22,11 @@ function SingleReview() {
     <p>...page is loading</p>
   ) : (
     <div>
+      <Button2 />
       <ul className="singleReviewBox">
         <li className="singleReviewInfoBox">
-          <h2>Game: {singleReview.title}</h2>
+          <h1>{singleReview.title}</h1>
+
           <p>Category: {singleReview.category}</p>
           <img src={singleReview.review_img_url} alt={singleReview.title} />
           <h3>Description:</h3>

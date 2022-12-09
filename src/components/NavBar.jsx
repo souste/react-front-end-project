@@ -15,9 +15,10 @@ function NavBar() {
 
   return (
     <nav className="navBar">
-      <ul>
+      <h2>Categories:</h2>
+      <ul className="categories">
         {categories.map((category) => {
-          return <Link>{category.slug}</Link>;
+          return <Link className="categoriesLinks">{category.slug}</Link>;
         })}
       </ul>
     </nav>

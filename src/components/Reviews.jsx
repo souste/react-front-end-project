@@ -26,11 +26,9 @@ function Contents() {
         {reviews.map((review) => {
           return (
             <li className="smallReviewBox" key={review.review_id}>
-              <h3>Game: {review.title}</h3>
+              <h3>{review.title}</h3>
               <p>Category: {review.category}</p>
               <img src={review.review_img_url} alt={review.title} />
-              <p>Designer: {review.designer}</p>
-              <p>Votes: {review.votes}</p>
               <Button reviewID={review.review_id} />
             </li>
           );
