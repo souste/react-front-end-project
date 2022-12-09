@@ -32,10 +32,11 @@ function Comments() {
         return (
           <div>
             <ul>
+              <p className="comment-author">Posted by: {comment.author}</p>
               <li className="indCommentBox">
                 <p>{comment.body}</p>
               </li>
-              <p className="comment-author">by: {comment.author}</p>
+
               <p className="comment-votes"> Votes: {comment.votes}</p>
             </ul>
           </div>

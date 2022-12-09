@@ -177,6 +177,8 @@ nav a {
 .comment-box {
   height: 100px;
   width: 600px;
+  border-radius: 0.875rem;
+  border: solid black;
 }
 
 .indCommentBox {
@@ -187,6 +189,7 @@ nav a {
   background: white;
   border-radius: 0.25rem;
   border: solid black;
+  border-radius: 0.875rem;
 }
 
 .comment-author {
