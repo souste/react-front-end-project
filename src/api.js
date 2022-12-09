@@ -32,4 +32,18 @@ export const getCommentByReviewId = (review_id) => {
     });
 };
 
+export const postComment = (review_id, newCommentInput) => {
+  console.log(review_id);
+  const postObject = { userName: "jessjelly", body: newCommentInput };
+  return axios
+    .post(
+      `https://plum-yak-toga.cyclic.app/api/reviews/${review_id}/comments`,
+      postObject
+    )
+    .then((response) => {
+      console.log(response.data);
+      return response.data.comment; // or postObject?
+    });
+};
+
 // I would suggest converting this to an axios instance with axios.create, since the baseURL is always going to be the same here, you can sometimes make mistakes if you are copy pasting it each time. This ensures that mistakes are less likely

@@ -6,7 +6,9 @@ function Button({ reviewID }) {
 
   return (
     <Link to={`/reviews/${reviewID}`}>
-      <button onClick={handleClick}>Open</button>
+      <button className="button" onClick={handleClick}>
+        Open
+      </button>
     </Link>
   );
 }
