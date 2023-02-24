@@ -33,7 +33,6 @@ export const getCommentByReviewId = (review_id) => {
 };
 
 export const postComment = (review_id, newCommentInput) => {
-  console.log(review_id);
   const postObject = { userName: "jessjelly", body: newCommentInput };
   return axios
     .post(
@@ -41,8 +40,20 @@ export const postComment = (review_id, newCommentInput) => {
       postObject
     )
     .then((response) => {
-      console.log(response.data);
-      return response.data.comment; // or postObject?
+      return response.data.comment;
+    });
+};
+
+export const patchVote = (review_id) => {
+  const patchObject = { votes: 1 };
+  return axios
+    .patch(
+      `https://plum-yak-toga.cyclic.app/api/reviews/${review_id}`,
+      patchObject
+    )
+    .then((response) => {
+      console.log(response);
+      return response.data.review;
     });
 };
 
